@@ -1,0 +1,32 @@
+Source: memtest86
+Section: misc
+Priority: optional
+Maintainer: Yann Dirson <dirson@debian.org>
+Build-Depends: debhelper (>> 5), dh-buildinfo, po-debconf
+Homepage: http://www.memtest86.com/
+Standards-Version: 3.8.0
+
+Package: memtest86
+Architecture: i386 amd64 kfreebsd-i386 kfreebsd-amd64 lpia hurd-i386
+Depends: ${misc:Depends}
+Suggests: hwtools, memtester, kernel-patch-badram, grub2 (>=1.96+20090523-1) | grub (>= 0.95+cvs20040624), mtools
+Recommends: memtest86+
+Description: thorough real-mode memory tester
+ Memtest86 scans your RAM for errors.
+ .
+ This tester runs independently of any OS - it is run at computer
+ boot-up, so that it can test *all* of your memory.  You may want to
+ look at `memtester', which allows testing your memory within Linux,
+ but this one won't be able to test your whole RAM.
+ .
+ It can output a list of bad RAM regions usable by the BadRAM kernel
+ patch, so that you can still use you old RAM with one or two bad bits.
+ .
+ This is the last DFSG-compliant version of this software, upstream
+ has opted for a proprietary development model starting with 5.0.  You
+ may want to consider using memtest86+, which has been forked from an
+ earlier version of memtest86, and provides a different set of
+ features.  It is available in the memtest86+ package.
+ .
+ A convenience script is also provided to make a grub-legacy-based
+ floppy or image.

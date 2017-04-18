@@ -1,0 +1,35 @@
+# Vietnamese translation for Memtest86.
+# Copyright © 2010 Free Software Foundation, Inc.
+# Clytie Siddall <clytie@riverland.net.au>, 2010.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: memtest86\n"
+"Report-Msgid-Bugs-To: memtest86+@packages.debian.org\n"
+"POT-Creation-Date: 2009-12-02 22:23+0100\n"
+"PO-Revision-Date: 2010-03-18 18:59+0930\n"
+"Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
+"Language-Team: Vietnamese <vi-VN@googlegroups.com>\n"
+"Language: vi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: LocFactoryEditor 1.8\n"
+
+#. Type: boolean
+#. Description
+#: ../templates:1001
+msgid "Run lilo automatically after upgrade (if found)?"
+msgstr "Tự động chạy lilo (nếu tìm được) sau khi nâng cấp ?"
+
+#. Type: boolean
+#. Description
+#: ../templates:1001
+msgid ""
+"If lilo is installed and its configuration file contains the memtest86/"
+"memtest86+ image, then it should be re-run in order to allow booting the new "
+"image."
+msgstr ""
+"Nếu lilo được cài đặt và tập tin cấu hình của nó chứa ảnh « memtest86/"
+"memtest86+ » thì có nên chạy lilo lần nữa để cho phép khởi động ảnh mới."

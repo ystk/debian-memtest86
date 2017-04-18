@@ -1,0 +1,35 @@
+# Dutch translation for memtest86 debconf templates.
+# Copyright (C) 2011 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the memtest86 package.
+# Jeroen Schot <schot@a-eskwadraat.nl>, 2011.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: memtest86_3.5\n"
+"Report-Msgid-Bugs-To: memtest86+@packages.debian.org\n"
+"POT-Creation-Date: 2009-12-02 22:23+0100\n"
+"PO-Revision-Date: 2011-04-14 14:43+0200\n"
+"Last-Translator: Jeroen Schot <schot@a-eskwadraat.nl>\n"
+"Language-Team: Debian l10n Dutch <debian-l10n-dutch@lists.debian.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Type: boolean
+#. Description
+#: ../templates:1001
+msgid "Run lilo automatically after upgrade (if found)?"
+msgstr "Lilo automatisch uitvoeren na een opwaardering (indien gevonden)?"
+
+#. Type: boolean
+#. Description
+#: ../templates:1001
+msgid ""
+"If lilo is installed and its configuration file contains the memtest86/"
+"memtest86+ image, then it should be re-run in order to allow booting the new "
+"image."
+msgstr ""
+"Als lilo is geïnstalleerd en zijn configuratiebestand bevat de memtest86/"
+"memtest86+-image, dan moet lilo opnieuw uitgevoerd worden om opstarten van "
+"de nieuwe image mogelijk te maken."

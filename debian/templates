@@ -1,0 +1,7 @@
+Template: shared/memtest86-run-lilo
+Type: boolean
+Default: false
+_Description: Run lilo automatically after upgrade (if found)?
+ If lilo is installed and its configuration file contains the
+ memtest86/memtest86+ image, then it should be re-run in order to
+ allow booting the new image.

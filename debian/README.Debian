@@ -1,0 +1,19 @@
+memtest86 for Debian
+--------------------
+
+Binary image is /boot/memtest86.bin
+
+To run the tester you'll need to setup your bootloader (see
+examples/lilo.conf for LILO), or to make a boot-floppy, and reboot on
+this image.
+
+This is the last DFSG-compliant version of this software, upstream
+has opted for a proprietary development model starting with 5.0.  You
+may want to consider using memtest86+, which has been forked from an
+older version, and is also available in Debian.
+
+The make-memtest86-boot-floppy utility will help you to create a boot
+floppy or floppy image using grub-legacy.  You may prefer to use the
+prebuilt ISO shipped by the memtest86+ package.
+
+ -- Yann Dirson <dirson@debian.org>, Tue, 10 Mar 2015 21:17:12 +0100

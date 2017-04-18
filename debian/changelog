@@ -1,0 +1,357 @@
+memtest86 (4.3.7-2) unstable; urgency=medium
+
+  * Update extended description and README.Debian to make it clear that
+    later versions are not DFSG-free.
+  * Upgrade "Suggests: memtest86+" to a "Recommends:".
+  * Make it explicit that make-memtest86-boot-floppy only works with
+    grub-legacy, and point to memtest86+.iso as alternative.
+  * Documented hairy source-download process in debian/copyright and
+    list the new copyright holder.
+
+ -- Yann Dirson <dirson@debian.org>  Tue, 10 Mar 2015 21:21:52 +0100
+
+memtest86 (4.3.7-1) unstable; urgency=medium
+
+  * New upstream release, and as it seems the last Free/OpenSource one.
+  * Updated debconf l10n for Slovak (Ivan Masár, Closes: #677917).
+  * New debconf l10n (Mert Dirik, Closes: #757507).
+
+ -- Yann Dirson <dirson@debian.org>  Sat, 11 Oct 2014 16:46:24 +0200
+
+memtest86 (4.3.6-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Yann Dirson <dirson@debian.org>  Wed, 04 Dec 2013 21:47:15 +0100
+
+memtest86 (4.3.5-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Yann Dirson <dirson@debian.org>  Sun, 24 Nov 2013 17:24:11 +0100
+
+memtest86 (4.3.4-1) unstable; urgency=low
+
+  * New upstream release, now available again directly from download dir.
+
+ -- Yann Dirson <dirson@debian.org>  Mon, 11 Nov 2013 23:14:03 +0100
+
+memtest86 (4.3.3-1) unstable; urgency=low
+
+  * New upstream release, still extracted from upstream's unversionned
+    memtest86-iso.gz.
+
+ -- Yann Dirson <dirson@debian.org>  Thu, 19 Sep 2013 23:26:50 +0200
+
+memtest86 (4.3.2-1) unstable; urgency=low
+
+  * New upstream release, painfully extracted from upstream's unversionned
+    memtest86-iso.gz.  Upstream contacted about the issue.  Kept
+    debian/watch in the hope that it will be working againt soon...
+  * Updated debian/watch to at least see the (older) versionned source
+    files there.
+
+ -- Yann Dirson <dirson@debian.org>  Wed, 04 Sep 2013 22:03:29 +0200
+
+memtest86 (4.0s-1) unstable; urgency=low
+
+  * New upstream release.
+  * Acknowledge NMUs.
+
+ -- Yann Dirson <dirson@debian.org>  Sun, 13 May 2012 23:18:23 +0200
+
+memtest86 (4.0a-0.1) unstable; urgency=low
+
+  * Non-maintainer upload, with maintainer's permission.
+  * New upstream version (Closes: #622395):
+    - Support machines with >= 4GB of RAM.  Closes: #522525, #572347, #582610,
+      #647756. 
+    - Fix build with -O3.  Closes: #389258.
+
+ -- Aurelien Jarno <aurel32@debian.org>  Fri, 27 Jan 2012 23:49:59 +0100
+
+memtest86 (3.5-2.3) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * Fix pending l10n issues. Debconf translations:
+    - Vietnamese (Clytie Siddall).  Closes: #574435
+    - Spanish (Ricardo Fraile).  Closes: #575646
+    - Brazilian Portuguese (Fábio Antonio Ferreira).  Closes: #598637
+    - Danish (Joe Hansen).  Closes: #621876
+    - Slovak (Slavko).  Closes: #622097
+    - Dutch; (Jeroen Schot).  Closes: #622755
+  * Fix grammar error in package description ("allows _to_ <infinitive>")
+
+ -- Christian Perrier <bubulle@debian.org>  Tue, 25 Oct 2011 02:13:27 +0200
+
+memtest86 (3.5-2.2) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * Fix pending l10n issues. Debconf translations:
+    - Russian (Yuri Kozlov).  Closes: #562628
+    - Portuguese (Américo Monteiro).  Closes: #563017
+    - German (Thomas Mueller).  Closes: #563287
+    - Japanese (Hideki Yamane (Debian-JP)).  Closes: #564290
+    - French (Christian Perrier).  Closes: #564429
+    - Swedish (Martin Bagge).  Closes: #564469
+    - Czech (Michal Simunek).  Closes: #573192
+    - Italian (Vincenzo Campanella).  Closes: #573826
+
+ -- Christian Perrier <bubulle@debian.org>  Sun, 14 Mar 2010 17:24:50 +0100
+
+memtest86 (3.5-2.1) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * Replace manual prompt with debconf (Closes: #553291).
+  * Compute the grub entry (either 'linux' or 'linux16') depending on
+    whether we find the old or new grub lib file, to support upgrades
+    from lenny
+  * Fix "please source grub-mkconfig_lib instead of deprecated update-
+    grub_lib in /etc/grub.d/20_memtest86", also via the above mechanism
+    (Closes: #523114)
+  * Update suggests to a recent version of grub2
+  * Add a lintian override for statically-linked-binary (which is expected)
+
+ -- Iustin Pop <iusty@k1024.org>  Sun, 06 Dec 2009 12:17:12 +0100
+
+memtest86 (3.5-2) unstable; urgency=low
+
+  * Sync'd packaging with memtest86+ 2.11-3.
+
+ -- Yann Dirson <dirson@debian.org>  Sun, 01 Mar 2009 17:14:17 +0100
+
+memtest86 (3.5-1) unstable; urgency=low
+
+  * New upstream release.
+  * Add Homepage in control file.
+  * Bumped Standards-Version to 3.8.0.
+  * Sync'd package with memtest86+ 2.11-2:
+    * Added hurd-i386 as architecture (Closes: #482898).
+    * Fixed finding boot image in grub script for newer grub.
+    * Run update-grub2 from postrm only if /boot/grub/grub.cfg is present.
+    * Use better idiom for safely calling "make clean".
+    * Install elf image for use with kexec and such.
+    * Depend on ${misc:Depends}
+    * Update make-memtest86-boot-floppy (Closes: #504834).
+
+ -- Yann Dirson <dirson@debian.org>  Mon, 09 Feb 2009 23:14:16 +0100
+
+memtest86 (3.4-2) unstable; urgency=low
+
+  * Call $(AS) with --32 (Hopefully closes: #462003).
+  * Call update-grub2, not update-grub, in postinst, and also call it in
+    postrm (Closes: #460079).
+
+ -- Yann Dirson <dirson@debian.org>  Mon, 24 Mar 2008 21:06:26 +0100
+
+memtest86 (3.4-1) unstable; urgency=low
+
+  * New upstream release.
+  * Updated debian/watch for new site layout (Closes: #450068).
+  * Applied patch from Hiroyuki Yamamoto to run update-grub if available
+    (Closes: #457636).
+  * Install /etc/grub.d/20_memtest86 from Robert Millan, suggests grub2
+    (Closes: #422356).
+  * Sync with memtest86+ packaging:
+    * support for kfreebsd-*
+    * removed bashisms in postinst
+
+ -- Yann Dirson <dirson@debian.org>  Wed, 02 Jan 2008 22:25:43 +0100
+
+memtest86 (3.3-2) unstable; urgency=low
+
+  * Re-applied fixes from 3.2-1.1 NMU, which I completely missed (Goswin
+    von Brederlow):
+    * Use CFLAGS instead of CCFLAGS to influence default rule for random.o.
+    * Use $(CFLAGS) for reloc.o to avoid __i686.... symbol (Closes: 286708).
+
+ -- Yann Dirson <dirson@debian.org>  Mon, 16 Apr 2007 22:01:25 +0200
+
+memtest86 (3.3-1) unstable; urgency=low
+
+  * New upstream release (Closes: #418939).
+  * Updated debian/watch for new website layout.
+  * In non-interactive mode, don't ask the user whether to run lilo on
+    update (Holger Mense - Closes: #383635).
+  * Fixed typo in extended description (Adrian Knoth - Closes: #377727).
+  * Reference memtester instead of sysutils in Suggests and extended
+    description (Benjamin Mesing - Closes: #372570).
+  * Rework extended description some more: memtest86+ is not any more
+    "more actively maintained upstream", and probably noone cares about
+    the old history of this package and memmxtest.
+  * Sync packaging with memtest86+-1.70:
+    * added note about assumed fs layout in grub conf example.
+    * avoid non-portable "read -p" in postinst.
+    * avoid non-portable "-o" in test(1) call in postinst.
+    * use dh-buildinfo.
+  * Remove build-dependency on gcc-3.2, build with current gcc.
+  * Switch to debhelper v5 (no change).
+  * Updated FSF address in debian/copyright.
+  * Bumped Standards-Version to 3.7.2 (no change).
+
+ -- Yann Dirson <dirson@debian.org>  Sun, 15 Apr 2007 17:23:13 +0200
+
+memtest86 (3.2-1) unstable; urgency=low
+
+  * New upstream release (includes many improvements from memtest86+
+    1.30).
+  * Added amd64 to the list of supported architectures, at least until
+    they can install the otherwise identical i386 package (Closes:
+    #280507).
+  * Build with gcc-3.2, since it does not build with current 3.3.
+
+ -- Yann Dirson <dirson@debian.org>  Mon, 15 Nov 2004 21:51:01 +0100
+
+memtest86 (3.1a-5) unstable; urgency=low
+
+  * Clarified refs to memtest86+ and memmxtest in extended description
+    (Closes: #276779).
+
+ -- Yann Dirson <dirson@debian.org>  Sat, 16 Oct 2004 16:41:00 +0200
+
+memtest86 (3.1a-4) unstable; urgency=low
+
+  * The "sync with memtest86+ 1.26-2" release.
+  * Regarding make-memtest86+-boot-floppy:
+    - posixified call to "read".
+    - added mtools to suggested packages, and notice early when the
+      package is missing.
+    - changed message about grub package, and versionned the suggests
+      field, so people know they need a recent version of it.
+  * Bumped Standards-Version to 3.6.1, no change.
+
+ -- Yann Dirson <dirson@debian.org>  Thu, 14 Oct 2004 00:07:34 +0200
+
+memtest86 (3.1a-3) unstable; urgency=low
+
+  * Fixed make-memtest86-boot-floppy to use /lib/grub instead of old
+    /usr/lib/grub (see #261883).
+  * Added grub to the list of suggested packages.  Mentionned the script
+    in the description.
+  * Include manpage by Thomas Schmidt for make-memtest86-boot-floppy
+    (Closes: #263708).
+  * Added debian/watch file.
+
+ -- Yann Dirson <dirson@debian.org>  Sat,  7 Aug 2004 01:28:35 +0200
+
+memtest86 (3.1a-2) unstable; urgency=low
+
+  * Removed now-useless build-dep on gcc-2.95 (Closes: #249877).
+  * Mentionned make-memtest86-boot-floppy in README.Debian (Closes: #227833).
+  * Moved it to /usr/bin/.
+
+ -- Yann Dirson <dirson@debian.org>  Tue, 25 May 2004 15:45:50 +0200
+
+memtest86 (3.1a-1) unstable; urgency=low
+
+  * New upstream release.
+  * Now builds with default compiler (Closes: #216916).
+
+ -- Yann Dirson <dirson@debian.org>  Sun, 21 Mar 2004 15:39:11 +0100
+
+memtest86 (3.1-1) unstable; urgency=low
+
+  * New upstream release (Closes: #238403).
+  * Updated make-memtest86-boot-floppy from memtest86+_1.11-2 (don't require
+    to be root any more).
+
+ -- Yann Dirson <dirson@debian.org>  Wed, 17 Mar 2004 01:53:45 +0100
+
+memtest86 (3.0-7) unstable; urgency=low
+
+  * Sync make-memtest86-boot-floppy with memtest86+ 1.00-3:
+    * Fixed make-memtest86+-boot-floppy to correctly select the devault
+      image as /dev/fd0.
+    * Fixed make-memtest86+-boot-floppy usage summary to advertise expected
+      syntax.
+  * Suggest memtest86+, and advertize it in the package description.
+
+ -- Yann Dirson <dirson@debian.org>  Wed,  4 Feb 2004 18:07:11 +0100
+
+memtest86 (3.0-6) unstable; urgency=low
+
+  * Improved make-memtest86-boot-floppy supporting generation of floppy
+    image, from memtest86+_1.00-2.
+
+ -- Yann Dirson <dirson@debian.org>  Wed,  4 Feb 2004 15:07:52 +0100
+
+memtest86 (3.0-5) UNRELEASED; urgency=low
+
+  * Ship contributed make-memtest86-boot-floppy from Peter Loje
+    <pl@2m.dk>, slightly modified so that a normal user could eventually
+    run it, but that needs more work.
+  * Use debian/compat.
+  * Added missing paragraph from website to README (Closes: #204675).
+
+ -- Yann Dirson <dirson@debian.org>  Wed, 29 Nov 2003 15:06:01 +0100
+
+memtest86 (3.0-4) unstable; urgency=low
+
+  * Fixed typo in README file (Closes: #69401).
+
+ -- Yann Dirson <dirson@debian.org>  Sun, 16 Nov 2003 17:17:22 +0100
+
+memtest86 (3.0-3) unstable; urgency=low
+
+  * Force the use of gcc 2.95 since 3.x appear to cause problems (Closes:
+    #192415).
+  * Removed now-useless build-dep on bin86, since gas is now used.
+
+ -- Yann Dirson <dirson@debian.org>  Thu, 29 May 2003 23:30:57 +0200
+
+memtest86 (3.0-2) unstable; urgency=low
+
+  * Rebuilt with current toolchain.
+  * Removed redundnt and conflicting decl for v in various .c files
+    (Closes: #190687).
+  * Removed trailing dot from short desc (lintian).
+  * Be sure to install memtest86.bin non-executable (lintian).
+  * Bumped Standards-Version to 3.5.9 (no change).
+
+ -- Yann Dirson <dirson@debian.org>  Fri, 25 Apr 2003 09:51:36 +0200
+
+memtest86 (3.0-1) unstable; urgency=low
+
+  * New upstream release (Closes: #148420).
+
+ -- Yann Dirson <dirson@debian.org>  Wed, 29 May 2002 23:54:22 +0200
+
+memtest86 (2.9-1) unstable; urgency=low
+
+  * New upstream release, including bugfixes for testing more than 2GB,
+    and changes to the way it looks for memory to be tested.
+
+ -- Yann Dirson <dirson@debian.org>  Sat,  9 Mar 2002 15:50:43 +0100
+
+memtest86 (2.8a-2) unstable; urgency=low
+
+  * Fixed typo in description (Closes: #125126).
+  * Added sample grub menu entry (Closes: #127399).
+  * Upgraded standards-version to 3.5.6 - no change.
+
+ -- Yann Dirson <dirson@debian.org>  Wed, 30 Jan 2002 22:14:28 +0100
+
+memtest86 (2.8a-1) unstable; urgency=low
+
+  * New upstream release - serial console is disabled by default now, it
+    made testing sooo sllooow.
+
+ -- Yann Dirson <dirson@debian.org>  Sat, 24 Nov 2001 15:32:32 +0100
+
+memtest86 (2.7-1) unstable; urgency=low
+
+  * New upstream release (Closes: #110541).
+  * Suggest sysutils, not memtest (Closes: #102244).
+  * Offer in postinst to run lilo.  Interactive, but then postinst of lilo
+    and of kernel-image are - we need a global solution anyway.
+    Closes: #109833.
+
+ -- Yann Dirson <dirson@debian.org>  Mon,  3 Sep 2001 23:13:32 +0200
+
+memtest86 (2.6-1) unstable; urgency=low
+
+  * First release to be packaged out of the hwtools package.
+  * Install as /boot/memtest86.bin.
+  * Added sample lilo.conf entry as example.
+
+ -- Yann Dirson <dirson@debian.org>  Thu, 21 Jun 2001 01:19:05 +0200

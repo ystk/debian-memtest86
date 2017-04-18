@@ -1,0 +1,69 @@
+#!/usr/bin/make -f
+# Sample debian/rules that uses debhelper.
+# GNU copyright 1997 to 1999 by Joey Hess.
+
+PACKAGE=memtest86
+
+build: build-stamp
+build-stamp:
+	dh_testdir
+
+# Different kernels, ABIs, ld defaults, see #338603
+ifeq ($(DEB_HOST_ARCH_OS),kfreebsd)
+	sed -i -e 's/"elf32-i386"/"elf32-i386-freebsd"/' memtest.lds memtest_shared.lds
+endif
+
+	$(MAKE) # CC=gcc-3.2
+	touch build-stamp
+
+clean:
+	dh_testdir
+	dh_testroot
+	rm -f build-stamp
+
+	[ ! -f Makefile ] || $(MAKE) clean
+
+	dh_clean
+
+install: build
+	dh_testdir
+	dh_testroot
+	dh_clean -k
+	dh_installdirs
+
+	install -d debian/$(PACKAGE)/usr/bin
+	install -m755 debian/make-$(PACKAGE)-boot-floppy debian/$(PACKAGE)/usr/bin/
+	install -D -m644 memtest.bin debian/$(PACKAGE)/boot/$(PACKAGE).bin
+	install -D -m644 memtest debian/$(PACKAGE)/usr/lib/$(PACKAGE)/$(PACKAGE).elf
+	install -D -m755 debian/grub debian/$(PACKAGE)/etc/grub.d/20_$(PACKAGE)
+	dh_installman debian/make-$(PACKAGE)-boot-floppy.1
+	#install the lintian override
+	install -d debian/$(PACKAGE)/usr/share/lintian/overrides
+	install -m644 debian/lintian-overrides \
+		debian/$(PACKAGE)/usr/share/lintian/overrides/$(PACKAGE)
+
+# Build architecture-independent files here.
+binary-indep: build install
+# We have nothing to do by default.
+
+# Build architecture-dependent files here.
+binary-arch: build install
+	dh_testdir
+	dh_testroot
+	dh_installdebconf
+	dh_installdocs README
+	dh_buildinfo
+	dh_installexamples debian/lilo.conf debian/grub-menu.lst
+	dh_installchangelogs
+	dh_lintian
+#	dh_strip
+	dh_compress
+	dh_fixperms
+	dh_installdeb
+#	dh_shlibdeps
+	dh_gencontrol
+	dh_md5sums
+	dh_builddeb
+
+binary: binary-indep binary-arch
+.PHONY: build clean binary-indep binary-arch binary install configure

@@ -1,0 +1,35 @@
+# ITALIAN TRANSLATION OF MEMTEST86'S PO-DEBCONF FILE.
+# COPYRIGHT (C) 2010 THE MEMTEST86'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the memtest86 package.
+# Vincenzo Campanella <vinz65@gmail.com>, 2010.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: memtest86\n"
+"Report-Msgid-Bugs-To: memtest86+@packages.debian.org\n"
+"POT-Creation-Date: 2009-12-02 22:23+0100\n"
+"PO-Revision-Date: 2010-03-08 08:13+0100\n"
+"Last-Translator: Vincenzo Campanella <vinz65@gmail.com>\n"
+"Language-Team: Italian <tp@lists.linux.it>\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Type: boolean
+#. Description
+#: ../templates:1001
+msgid "Run lilo automatically after upgrade (if found)?"
+msgstr "Eseguire automaticamente lilo (se trovato) dopo l'aggiornamento?"
+
+#. Type: boolean
+#. Description
+#: ../templates:1001
+msgid ""
+"If lilo is installed and its configuration file contains the memtest86/"
+"memtest86+ image, then it should be re-run in order to allow booting the new "
+"image."
+msgstr ""
+"Se è installato, e il suo file di configurazione contiene l'immagine di "
+"memtest86/memtest86+, lilo dovrebbe essere eseguito nuovamente per "
+"consentire l'avvio della nuova immagine."

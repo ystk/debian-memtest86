@@ -1,0 +1,35 @@
+# Czech translation of PO debconf template for package memtest86.
+# Copyright (C) 2010 Michal Simunek
+# This file is distributed under the same license as the memtest86 package.
+# Michal Simunek <michal.simunek@gmail.com>, 2010.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: memtest86\n"
+"Report-Msgid-Bugs-To: memtest86+@packages.debian.org\n"
+"POT-Creation-Date: 2009-12-02 22:23+0100\n"
+"PO-Revision-Date: 2010-03-09 17:57+0100\n"
+"Last-Translator: Michal Simunek <michal.simunek@gmail.com>\n"
+"Language-Team: Czech <debian-l10n-czech@lists.debian.org>\n"
+"Language: cs\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Type: boolean
+#. Description
+#: ../templates:1001
+msgid "Run lilo automatically after upgrade (if found)?"
+msgstr "Spustit lilo automaticky po aktualizaci (je-li nalezen)?"
+
+#. Type: boolean
+#. Description
+#: ../templates:1001
+msgid ""
+"If lilo is installed and its configuration file contains the memtest86/"
+"memtest86+ image, then it should be re-run in order to allow booting the new "
+"image."
+msgstr ""
+"Pokud je lilo nainstalován a jeho konfigurační soubor obsahuje obraz "
+"memtest86/memtest86+, pak by měl být znovu spuštěn, aby došlo k zavedení "
+"nového obrazu."
